@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Puissance 4</title>
+  <link href="./puissance4.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="grid-container" class="grid"></div>
+  <div class="container">
+    <button class="centered-button" onclick="resetGame()">Réinitialiser le jeu</button>
+  </div>
+  <script src="./puissance4.js"></script>
+  <script>
+    function startGame() {
+      const rows = parseInt(prompt("Combien de lignes ?", "6"));
+      const cols = parseInt(prompt("Combien de colonnes ?", "7"));
+      if (!isNaN(rows) && !isNaN(cols)) {
+        initializeGame(rows, cols);
+      } else {
+        alert("Veuillez entrer des valeurs numériques valides.");
+      }
+    }
+    window.addEventListener('load', startGame);
+  </script>
+  <audio id="redSound" src="red_sound.mp3" preload="auto"></audio>
+  <audio id="blueSound" src="blue_sound.mp3" preload="auto"></audio>
+</body>
+
+</html>
